@@ -1,0 +1,38 @@
+/*** THREAD TEMPLATE 1 ***/
+
+.mt-ps2 {
+    width: 55%;
+    margin: 40px auto;
+    font: 400 14px var(--txt-four);
+    background: rgb(var(--bg-h));
+    padding: 50px;
+    outline: 20px solid rgb(var(--bg-h));
+      border: 1.5px solid;
+    border-image-slice:1;
+    border-image-source: var(--grad2);
+    color: var(--t1);
+    line-height: 140%;
+position:relative;
+text-align: justify;
+box-sizing: border-box;
+}
+
+.mt-ps2 b {
+font-weight: 700;
+color: var(--acc);
+font-size: 16px;
+}
+
+
+.mt-ps2 i {
+font-weight: 500;
+color: var(--acc2);
+font-size: 16px;
+}
+
+
+.mt-ps2 u {
+color: var(--acc3);
+font-family: var(--txt-two);
+text-decoration-offset: 3px;
+}
