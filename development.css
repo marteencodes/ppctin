@@ -113,7 +113,8 @@
     align-items: center;
     justify-content: flex-start;
     border-radius: 5px;
-    background: var(--bgx);
+    background: var(--bg2);
+    color: var(--t1);
 }
 
 .article-header {
