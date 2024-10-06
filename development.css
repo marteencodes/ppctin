@@ -1,5 +1,5 @@
 /**** THREAD TRACKER FIZZYELF ***/
-.mt-ppc *, .mt-ppc *:after, .mt-ppc:before {box-sizing:border-box;}
+.mt-ppc *, .mt-ppc *:after, .mt-ppc *:before {box-sizing:border-box;}
 
 .mt-trackwrap {
     width: 80%;
