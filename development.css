@@ -288,7 +288,7 @@
 /**** DOSSIER CODE 2 *****/
 
 .mt-doss2-wrap {
-  width: 80%;
+  width: 100%;
   margin: 50px auto;
   height: 500px;
   border-radius: 10px;
@@ -301,11 +301,11 @@
 
 
 .mt-doss2-img {
-  width: 350px;
-  height: 500px;
+  width: 250px;
+  height: 350px;
     border-radius: 50%;
-  transform: rotate(30deg);
-  -webkit-transform: rotate(30deg);
+  transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
   position: relative;
   left: 25px;
   display: flex;
@@ -314,8 +314,8 @@
 }
 
 .mt-doss2-img img {
-  width: 350px;
-  height: 500px;
+  width: 250px;
+  height: 350px;
   object-fit: cover;
   filter:saturate(0.4) contrast(1.2) brightness(0.7);
   -webkit-filter:saturate(0.4) contrast(1.2) brightness(0.7);
@@ -327,28 +327,28 @@
 
 .mt-doss2-img:after {
   content: '';
-  width: 340px;
-  height: 490px;
+  width: 240px;
+  height: 340px;
   border-radius: 50%;
   border: 2px solid var(--acc2);
   position: absolute;
   bottom: 20px;
   z-index: 3;
-  transform: rotate(-15deg);
-  -webkit-transform: rotate(-15deg);
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
 }
 
 .mt-doss2-img:before {
   content: '';
-  width: 340px;
-  height: 480px;
+  width: 240px;
+  height: 330px;
   border-radius: 50%;
   border: 2px solid var(--acc);
   position: absolute;
   bottom: 15px;
   z-index: 3;
-  transform: rotate(-35deg);
-  -webkit-transform: rotate(-35deg);
+  transform: rotate(-25deg);
+  -webkit-transform: rotate(-25deg);
 }
 
 .mt-doss2-img h1 {
@@ -356,12 +356,14 @@
   -webkit-transform: rotate(-30deg);
   position: absolute;
   z-index: 2;
-  bottom:30px;
-  left: 70px;
+  bottom:10px;
+  left: 40px;
   max-width: 350px;
   word-spacing: 999px;
   text-align: left;
-  font: 900 65px var(--txt-three);
+  font: 900 40px var(--txt-three);
+    word-break:break-word;
+    max-width: 250px;
   text-transform: uppercase;
   line-height: 80%;
   color: var(--acc3);
@@ -378,7 +380,7 @@
 
 .mt-doss2-con {
   flex: 1;
-  width: calc(100% - 350px);
+  width: calc(100% - 250px);
   height: 500px;
   background: rgba(var(--bg2-h), 0.6);
   border-radius: 15px;
