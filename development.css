@@ -352,12 +352,12 @@
 }
 
 .mt-doss2-img h1 {
-  transform: rotate(-30deg);
-  -webkit-transform: rotate(-30deg);
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
   position: absolute;
   z-index: 2;
   bottom:10px;
-  left: 40px;
+  left: 50px;
   max-width: 350px;
   word-spacing: 999px;
   text-align: left;
