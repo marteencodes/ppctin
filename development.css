@@ -284,3 +284,213 @@
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
 }
+
+/**** DOSSIER CODE 2 *****/
+
+.mt-doss2-wrap {
+  width: 80%;
+  margin: 50px auto;
+  height: 500px;
+  border-radius: 10px;
+   display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+.mt-doss2-img {
+  width: 350px;
+  height: 500px;
+    border-radius: 50%;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  position: relative;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.mt-doss2-img img {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  filter:saturate(0.4) contrast(1.2) brightness(0.7);
+  -webkit-filter:saturate(0.4) contrast(1.2) brightness(0.7);
+  position: relative;
+  border-radius: 50%;
+  z-index: 1; 
+  flex: 1 1 1;
+}
+
+.mt-doss2-img:after {
+  content: '';
+  width: 340px;
+  height: 490px;
+  border-radius: 50%;
+  border: 2px solid var(--acc2);
+  position: absolute;
+  bottom: 20px;
+  z-index: 3;
+  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+}
+
+.mt-doss2-img:before {
+  content: '';
+  width: 340px;
+  height: 480px;
+  border-radius: 50%;
+  border: 2px solid var(--acc);
+  position: absolute;
+  bottom: 15px;
+  z-index: 3;
+  transform: rotate(-35deg);
+  -webkit-transform: rotate(-35deg);
+}
+
+.mt-doss2-img h1 {
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  position: absolute;
+  z-index: 2;
+  bottom:30px;
+  left: 70px;
+  max-width: 350px;
+  word-spacing: 999px;
+  text-align: left;
+  font: 900 65px var(--txt-three);
+  text-transform: uppercase;
+  line-height: 80%;
+  color: var(--acc3);
+  letter-spacing: 2px;
+}
+
+.mt-doss2-img h1:before {
+  content: 'introducing:';
+  display: block;
+  font: 900 12px var(--txt-two);
+  letter-spacing: 0.7px;
+  color: var(--wtxt);
+}
+
+.mt-doss2-con {
+  flex: 1;
+  width: calc(100% - 350px);
+  height: 500px;
+  background: rgba(var(--bg2-h), 0.6);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.mt-doss2-con2 {
+  width: 100%;
+  height: 460px;
+  background: var(--bg2);
+  border-radius: 10px;
+  overflow-y: scroll;
+  padding: 40px 50px;
+  text-align: justify;
+}
+
+.mt-doss2-con2 h1 {
+  width: max-content;
+  margin-bottom: 30px;
+  margin-top: 0;
+  font: 700 45px var(--txt-three);
+  background: var(--grad2);
+  background-size: 100% 15px;
+  background-repeat: no-repeat;
+  background-position: bottom 5px left 20px;
+  color: var(--t1);
+}
+
+.mt-consec {
+  width: 100%;
+  display: flex;
+  padding: 25px;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mt-consec div {
+  flex: 1 1 0;
+  min-width: 40%;
+  display: flex;
+  flex-flow: column;
+  margin: 20px 0px;}
+
+.mt-consec ques {
+  width: max-content;
+  display: inline-flex;
+  font: 500 20px var(--txt-three);
+   background: var(--grad1);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: bottom -3px right 5px;
+  color: var(--t1);
+  margin-bottom: 10px;
+}
+
+.mt-consec ans {
+  display: inline-flex;
+  width: max-content;
+  font: 400 15px var(--body);
+  padding: 0px 10px;
+  color: var(--t1);
+  letter-spacing: 0.5px;
+}
+
+.mt-doss2-con2 hr {
+  color: var(--acc);
+  margin: 50px 0px;
+}
+
+.mt-tags {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mt-tags h2 {
+  text-transform: uppercase;
+  font: 900 50px var(--txt-three);
+  display: inline-flex;
+  color: var(--t1);
+  line-height: 100%;
+  margin: 0;
+}
+
+.mt-tags div {
+  flex: 1 1 1;
+  margin-left: 15px;
+  height: 80px;
+  overflow: scroll;
+}
+
+.mt-tags div b {
+  display: inline-block;
+  color: var(--t1);
+  font: 500 13px var(--txt-two);
+  padding: 5px;
+  background-image:var(--grad2);
+  background-color: rgba(var(--bg2-h),0.6);
+  background-blend-mode: darken;
+  border-radius: 5px;
+  margin: 4px 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.mt-free {
+  width: 100%;
+  padding: 20px;
+  line-height: 150%;
+  font: 500 15px var(--body);
+}
