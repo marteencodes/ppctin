@@ -1,0 +1,127 @@
+.mt-ppc *, .mt-ppc *:before, .mt-ppc *:after {box-sizing:border-box;}
+
+.mt-verseinfo {
+  width: 75%;
+  margin: 100px auto;
+  background: var(--bg2);
+  border-radius: 20px;
+  position: relative;
+}
+
+.mt-verseinfo-head {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20px 20px 0px 0px;
+  padding: 20px;
+  position:relative;
+  z-index: 1;
+}
+
+.mt-verseinfo-head img {
+    filter: saturate(0) brightness(0.7) contrast(1.2);
+  -webkit-filter: saturate(0) brightness(0.7) contrast(1.2);
+    width: 100%;
+  height: 450px;
+  border-radius: 20px 20px 0px 0px;
+  z-index: 1;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.mt-verseinfo-head:after {
+  content:'';
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(var(--bg2-h),1) 80%);
+  display: block;
+  left: 0;
+}
+
+.mt-verseinfo-title {
+ width: 100%;
+  padding: 40px 50px 0px;
+  height: auto;
+}
+
+.mt-verseinfo-title tit {
+  display: block;
+  font: 700 45px var(--txt-three);
+  width: max-content;
+  color: var(--t1);
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  line-height: 140%;
+  background: var(--grad2);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+}
+
+.mt-verseinfo-title tit:before {
+  content:'accessing verse data:';
+  font: 500 12px var(--txt-two);
+  color: var(--wtxt);
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  background: rgba(var(--bgx-h),0.3);
+  padding: 4px;
+  border-radius: 4px;
+  width: max-content;
+}
+
+.mt-verseinfo-title subt {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  margin-top: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  font: 500 14px var(--txt-two);
+  color: var(--t1);
+  line-height: 120%;
+}
+
+.mt-verseinfo-title subt:before {
+  content: 'details:';
+  margin-right: 10px;
+  text-transform: uppercase;
+  color: var(--wtxt);
+    background: rgba(var(--bgx-h),0.3);
+  padding: 4px;
+  border-radius: 4px;
+  width: max-content;
+}
+
+.mt-verseinfo-title subt b {
+  background: rgba(var(--acc-h), 0.3);
+  padding: 5px 8px;
+  border-radius: 3px;
+  color: var(--t1);
+  margin: 5px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.mt-verseinfo-info {
+  width: 100%;
+  padding: 20px 80px 80px;
+  background: var(--bg2);
+  border-radius: 20px;
+  font: 400 15px var(--body);
+  text-align: justify;
+  letter-spacing: 0.3px;
+  line-height: 150%;
+  color: var(--t1);
+}
