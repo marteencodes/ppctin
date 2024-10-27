@@ -9,7 +9,11 @@ window.addEventListener('load', function() {
         return nameA.localeCompare(nameB);
     });
 
-    // Clear the container and append sorted entries
-    entriesContainer.innerHTML = '';
-    entries.forEach(entry => entriesContainer.appendChild(entry));
+    // Use a DocumentFragment to hold the sorted entries
+    const fragment = document.createDocumentFragment();
+    entries.forEach(entry => fragment.appendChild(entry));
+
+    // Append the sorted entries to the container
+    // This will preserve any existing content (like headers)
+    entriesContainer.appendChild(fragment);
 });
