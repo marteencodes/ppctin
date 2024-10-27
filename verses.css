@@ -1,12 +1,14 @@
 .mt-ppc *, .mt-ppc *:before, .mt-ppc *:after {box-sizing:border-box;}
 
-.mt-verseinfo {
+.mt-verseinfo, .mt-verseclaims {
   width: 75%;
   margin: 100px auto;
   background: var(--bg2);
   border-radius: 20px;
   position: relative;
 }
+
+.mt-verseclaims {width: 90%;}
 
 .mt-verseinfo-head {
   width: 100%;
@@ -79,6 +81,10 @@
   width: max-content;
 }
 
+.mt-verseclaims .mt-verseinfo-title tit:before {
+  content:'accessing verse claims:';
+}
+
 .mt-verseinfo-title subt {
   width: 100%;
   position: relative;
@@ -114,7 +120,7 @@
   letter-spacing: 0.3px;
 }
 
-.mt-verseinfo-info {
+.mt-verseinfo-info, .mt-verseinfo-claims {
   width: 100%;
   padding: 20px 80px 80px;
   background: var(--bg2);
@@ -124,4 +130,37 @@
   letter-spacing: 0.3px;
   line-height: 150%;
   color: var(--t1);
+}
+
+.mt-verseinfo-claims {
+  padding: 0px 80px 80px;
+}
+
+.mt-verseinfo-claims .mt-claimstable {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  column-gap: 30px;
+}
+
+.mt-claimstable .mt-tabheader {
+  font: 700 20px var(--txt-three);
+  width: max-content;
+  cursor: crosshair;
+  line-height: 140%;
+  background: var(--grad2);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+  align-self: center;
+ 
+}
+
+.mt-claimstable .mt-entry {
+  display: contents;
+  margin: 10px 0px;
+  font: 400 14px var(--body);
+  color: var(--t1);
+  text-wrap: balance;
 }
