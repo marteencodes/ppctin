@@ -1,47 +1,44 @@
-    const table = document.querySelector('.mt-claimstable');
-    const rows = Array.from(table.querySelectorAll('.mt-entry')).map(entry => {
-        const cells = entry.querySelectorAll('.mt-tablecell');
-        return Array.from(cells).map(cell => cell.textContent);
-    });
+    $(document).ready(function() {
+        const $table = $('.mt-claimstable');
+        let rows = $('.mt-entry').map(function() {
+            return $(this).find('.mt-tablecell').map(function() {
+                return $(this).text();
+            }).get();
+        }).get();
 
-    const sortRows = (index) => {
-        rows.sort((a, b) => {
-            if (a[index] < b[index]) return -1;
-            if (a[index] > b[index]) return 1;
-            return 0;
-        });
-        renderTable();
-    };
-
-    const renderTable = () => {
-        table.innerHTML = '';
-        table.innerHTML += `
-            <div class="mt-tabheader" data-index="0">character</div>
-            <div class="mt-tabheader" data-index="1">face claim</div>
-            <div class="mt-tabheader" data-index="2">played by</div>
-        `;
-        rows.forEach(row => {
-            const entry = document.createElement('div');
-            entry.className = 'mt-entry';
-            row.forEach((value, i) => {
-                const dataValue = ['name', 'face', 'player'][i];
-                entry.innerHTML += `<div class="mt-cell" data-value="${dataValue}">${value}</div>`;
+        const sortRows = (index) => {
+            rows.sort((a, b) => {
+                return a[index].localeCompare(b[index]);
             });
-            table.appendChild(entry);
-        });
-        attachHeaderEvents();
-    };
+            renderTable();
+        };
 
-    const attachHeaderEvents = () => {
-        const headers = table.querySelectorAll('.mt-tabheader');
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
-                const index = parseInt(header.getAttribute('data-index'), 10);
+        const renderTable = () => {
+            $table.empty();
+            $table.append(`
+                <div class="mt-tabheader" data-index="0">character</div>
+                <div class="mt-tabheader" data-index="1">face claim</div>
+                <div class="mt-tabheader" data-index="2">played by</div>
+            `);
+            rows.forEach(row => {
+                const $entry = $('<div class="mt-entry"></div>');
+                row.forEach((value, i) => {
+                    const dataValue = ['name', 'face', 'player'][i];
+                    $entry.append(`<div class="mt-tablecell" data-value="${dataValue}">${value}</div>`);
+                });
+                $table.append($entry);
+            });
+            attachHeaderEvents();
+        };
+
+        const attachHeaderEvents = () => {
+            $('.mt-tabheader').off('click').on('click', function() {
+                const index = parseInt($(this).data('index'), 10);
                 sortRows(index);
             });
-        });
-    };
+        };
 
-    // Initial load, sort by Name
-    rows.sort((a, b) => a[0].localeCompare(b[0]));
-    renderTable();
+        // Initial load, sort by Name
+        rows.sort((a, b) => a[0].localeCompare(b[0]));
+        renderTable();
+    });
