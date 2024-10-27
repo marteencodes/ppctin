@@ -1,4 +1,5 @@
-   const table = document.querySelector('.mt-claimstable');
+document.addEventListener('DOMContentLoaded', () => {
+    const table = document.querySelector('.mt-claimstable');
     const rows = Array.from(table.querySelectorAll('.mt-entry')).map(entry => {
         const cells = entry.querySelectorAll('.mt-tablecell');
         return Array.from(cells).map(cell => cell.textContent);
@@ -45,3 +46,4 @@
     // Initial load, sort by Name
     rows.sort((a, b) => a[0].localeCompare(b[0]));
     renderTable();
+});
