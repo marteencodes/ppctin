@@ -1,4 +1,5 @@
-window.addEventListener('load', function() {
+window.addEventListener("load",function() {
+    {
     const entriesContainer = document.querySelector('.mt-claimstable');
     const entries = Array.from(entriesContainer.querySelectorAll('.mt-entry'));
 
@@ -16,8 +17,8 @@ window.addEventListener('load', function() {
     // Append the sorted entries to the container
     // This will preserve any existing content (like headers)
     entriesContainer.appendChild(fragment);
+    }
 
-    document.addEventListener("DOMContentLoaded", function() {
         const headers = document.querySelectorAll('.mt-tabheader');
         const entries = Array.from(document.querySelectorAll('.mt-entry'));
 
@@ -56,6 +57,5 @@ window.addEventListener('load', function() {
                 default: return '';
             }
         }
-    });
+}
 });
-
