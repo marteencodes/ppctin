@@ -1,5 +1,4 @@
-window.addEventListener("load",function() {
-    {
+{
     const entriesContainer = document.querySelector('.mt-claimstable');
     const entries = Array.from(entriesContainer.querySelectorAll('.mt-entry'));
 
@@ -48,8 +47,7 @@ window.addEventListener("load",function() {
                 header.setAttribute('data-order', newOrder); // Set new order for the clicked header
             });
         });
-
-        function getDataKey(index) {
+function getDataKey(index) {
             switch (index) {
                 case '0': return 'name';
                 case '1': return 'face';
@@ -57,5 +55,3 @@ window.addEventListener("load",function() {
                 default: return '';
             }
         }
-}
-});
