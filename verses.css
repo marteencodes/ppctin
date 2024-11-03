@@ -1,6 +1,9 @@
+/** you can add your invidual styles here, or create a new file for exporting **/
 .mt-ppc *, .mt-ppc *:before, .mt-ppc *:after {box-sizing:border-box;}
 
-.mt-verseinfo, .mt-verseclaims {
+.mt-ppc *, .mt-ppc *:before, .mt-ppc *:after {box-sizing:border-box;}
+
+.mt-verseinfo, .mt-verseclaims, .mt-verseprofile {
   width: 75%;
   margin: 100px auto;
   background: var(--bg2);
@@ -22,7 +25,12 @@
   z-index: 1;
 }
 
-.mt-verseinfo-head img {
+.mt-verseprofile .mt-verseinfo-head {
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.mt-verseinfo-head img.versbg {
     filter: saturate(0) brightness(0.7) contrast(1.2);
   -webkit-filter: saturate(0) brightness(0.7) contrast(1.2);
     width: 100%;
@@ -120,6 +128,83 @@
   letter-spacing: 0.3px;
 }
 
+.mt-verseprofile .mt-verseinfo-title {
+  width:100%;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mt-verseinfo-title .mt-charactername {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mt-verseinfo-title .mt-charactername b {
+    display: block;
+  font: 700 30px var(--txt-three);
+  width: max-content;
+  word-break:break-word;
+  color: var(--t1);
+  text-align: left;
+  line-height: 140%;
+margin: 0px 5px;
+    background: var(--grad1);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+  text-decoration: none;
+  align-self: left;
+}
+
+.mt-charactername miniti, .mt-charactername info {
+    font: 500 12px var(--txt-two);
+  color: var(--wtxt);
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  background: rgba(var(--bgx-h),0.3);
+  padding: 4px;
+  border-radius: 4px;
+  width: max-content;
+}
+.mt-charactername miniti:before {
+  content: 'load verse: ';
+}
+
+.mt-charactername info {
+  margin-top: 20px;
+}
+
+.mt-characterimg {
+  width: 130px;
+  height: 130px;
+  background: var(--bg1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  margin: 30px 0px;
+}
+
+.mt-characterimg img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .mt-verseinfo-info, .mt-verseinfo-claims {
   width: 100%;
   padding: 20px 80px 80px;
@@ -134,7 +219,6 @@
 
 .mt-verseinfo-claims {
   padding: 0px 80px 80px;
-  margin-top: -3px;
 }
 
 .mt-verseinfo-claims .mt-claimstable {
@@ -164,4 +248,190 @@
   font: 400 14px var(--body);
   color: var(--t1);
   text-wrap: balance;
+}
+
+.mt-verse-profile {
+  width: 100%;
+  padding: 0px 60px 80px;
+  background: var(--bg2);
+  border-radius: 20px;
+  font: 400 15px var(--body);
+  text-align: justify;
+  letter-spacing: 0.3px;
+  line-height: 150%;
+  color: var(--t1);
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-column-gap: 20px;
+  top: -70px;
+}
+
+.mt-verse-profile input {display: none;}
+.mt-verse-profile label {
+  width: max-content;
+  grid-column: span 1;
+  grid-row: 1 / 2;
+  font: 700 18px var(--txt-three);
+  width: max-content;
+  color: var(--t1);
+  text-align: left;
+  line-height: 140%;
+margin: 0px 5px;
+    background: transparent;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+  align-self: center;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  z-index:5;
+}
+
+.mt-verse-profile label:first-of-type {margin-left: 0px;}
+
+.mt-verse-profile input:checked+label {
+   background: var(--grad2);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+  align-self: center;
+  transition: 0.3s ease-in-out;
+}
+
+.mt-verse-profile .verse-con {
+   position: relative;
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+  z-index: 1;
+  opacity:0;
+  visibility: hidden;
+  transition: 0.5s ease-in-out;
+
+}
+
+#versepro1:checked+label ~ .mtv-overview, #versepro2:checked+label ~ .mtv-hooks, #versepro3:checked+label ~ .mtv-track {
+  opacity: 1; 
+  z-index: 1;
+    top: 0;
+  visibility: visible;
+  transition: 0.5s ease-in-out;
+}
+
+#versepro1:checked+label ~ .mtv-track, #versepro2:checked+label ~ .mtv-overview, #versepro3:checked+label ~ .mtv-hooks {
+  top: -100%;
+} 
+
+#versepro1:checked+label ~ .mtv-hooks, #versepro2:checked+label ~ .mtv-track, #versepro3:checked+label ~ .mtv-overview {
+  top: 100%;
+} 
+
+.mtv-overview b, .mtv-hooks b {
+   background: var(--grad1);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+  align-self: center;
+  transition: 0.3s ease-in-out;
+}
+
+.mtv-track ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0px;
+  position: relative;
+  left: -25px;
+}
+
+.mtv-track li {
+  width: 100%;
+  list-style: none;
+  flex-grow: 2;
+  background: var(--bg);
+  padding: 30px;
+  padding-left: 0;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column wrap;
+  height: 90px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0;
+  transition: 0.3s ease-in-out;
+}
+
+.mtv-track li:hover {
+  background: var(--bg1);
+  transition: 0.3s ease-in-out;
+}
+
+.mtv-track li.mine:before {
+  content:'⦿';
+  display: inline-flex;
+  font-size: 40px;
+  padding: 10px;
+  background: var(--grad3);
+  border-radius: 10px;
+  color: transparent;
+   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0px 10px;
+}
+
+.mtv-track li.theirs:before {
+  content:'⦾';
+  display: inline-flex;
+  font-size: 40px;
+  padding: 10px;
+  background: var(--grad3);
+  border-radius: 10px;
+  color: transparent;
+   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0px 10px;
+}
+
+.mtv-track li.closed:before {
+  content:'●';
+  display: inline-flex;
+  font-size: 40px;
+  padding: 10px;
+  background: var(--grad3);
+  border-radius: 10px;
+  color: transparent;
+   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0px 10px;
+  position: relative;
+  top: -3px;
+  left: 3px;
+}
+
+
+.mtv-track li a {
+  display: block;
+  font: 700 18px var(--txt-three);
+  width: max-content;
+  color: var(--t1);
+  text-align: left;
+  line-height: 140%;
+margin: 0px 5px;
+    background: var(--grad1);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+  align-self: center;
+  text-decoration: none;
+}
+
+.mtv-track li i {
+  font: normal 500 12px var(--txt-two);
+  text-transform: uppercase;
 }
